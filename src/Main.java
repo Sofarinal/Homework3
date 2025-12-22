@@ -27,90 +27,71 @@ public class Main {
 
             // Задание 2
             byte a = 67;
-            short b = 569;
+            short b = -159;
             int c = 27897;
             long cheese = 987678965549L;
             float r = 27.12f;
             double sun = 2.786;
+            var p = 569;
 
             //Задание 3
             var lydmila = 23;
             var anna = 27;
             var katy = 30;
             var sheet = 480;
-            lydmila = anna+ katy + lydmila;
-            sheet = sheet / lydmila;
-            System.out.println ("На каждого ученика рассчитано"  + sheet +  "листов бумаги");
+            var result = lydmila + anna + katy;
+            var result1 = sheet / result;
+            System.out.println ("На каждого ученика рассчитано"  + result1 +  "листов бумаги");
 
             // Задание 4
-            // сутки - 24 часа - 1440 минут
-            // 3 дня - 4320 минут
-            // месяц - 30 дней - 43200 минут
-            // я всё перевела в минуты, чтобы была одна еденица измерения
-            var bottle = 16;
-            var minute = 2;
-            var minuteMinute = 20;
-            var hour = 1440;
-            var day = 4320;
-            var month = 43200;
-
-            bottle = bottle / minute;
-            bottle = minuteMinute * bottle;
-            System.out.println ("За 20 минут машина произвела" + bottle + "штук бутылок");
-            bottle = bottle / minuteMinute;
-            bottle = bottle * hour;
-            System.out.println ("За сутки машина произвела" + bottle + "штук бутылок");
-            bottle = bottle / hour;
-            bottle = bottle * day;
-            System.out.println ("За 3 дня машина произвела" + bottle + "штук бутылок");
-            bottle = bottle / day;
-            bottle = bottle * month;
-            System.out.println ("За 1 месяц машина произвела" + bottle + "штук бутылок");
+           var botles = 16;
+           var minutes = 2;
+           var productivity = botles / minutes;
+           var minuteMinute = productivity * 20;
+           var hour = productivity * 24 * 60;
+           // 24 часа и 60 минут
+            var day = hour * 3;
+            var month = hour * 30;
+            // 30 дне в месяце
+            System.out.println ("За 20 минут машина произвела" + minuteMinute + "штук бутылок");
+            System.out.println ("За сутки машина произвела" + hour + "штук бутылок");
+            System.out.println ("За 3 дня машина произвела" + day + "штук бутылок");
+            System.out.println ("За месяц машина произвела" + month + "штук бутылок");
 
             // Задание 5
             var white = 2;
             var brown = 4;
             var paint = 120;
-            white = white + brown;
-            paint = paint / white;
-            var office = 20;
-            // 20 взято из решения сверху, то есть мы всё кол-во краски, поделили на расход краски в 1 кабинете (из условия), получили ответ
-            white = white - brown;
-            office = office * white;
-            var officeWhite = 40;
-            // 40 взято из решения сверху, то есть мы нашли кол-во белой краски умножив кол-во кабинетов на расход в одном классе
-            office = officeWhite / white;
-            office = office * brown;
-            var officeBrown = 80;
-            // 80 взято из решения сверху, то есть мы нашли кол-во коричневой краски умножив кол-во кабинетов на расход в одном классе
-            office = officeBrown / brown;
-            System.out.println ("В школе, где" + office + "классов, нужно" + officeWhite + "банок белой краски и" + officeBrown + "банок коричневой краски");
-            // надеюсь правильно, если нет, то я пока даже не знаю как написать подругому(((
+            var whiteBrown = white + brown;
+            // общее количество краски на класс
+            var office = paint / whiteBrown;
+            // количество классов
+            var totalWhite = office * white;
+            var totalBrown = office * brown;
+            System.out.println ("В школе, где" + office + "классов, нужно" + totalWhite + "банок белой краски и" + totalBrown + "банок коричневой краски");
 
             // Задание 6
-            // всё переведено сразу в граммы
-            var banana = 400;
-            var milk = 210;
-            var plombir = 200;
-            var egg = 280;
-            banana = banana + milk + plombir + egg;
-            System.out.println ("Количество грамм завтрака:" + banana );
-            banana = banana / 1000;
-            System.out.println ("Количество грамм завтрака:" + banana );
-            // я не поняла как перевести граммы в килограммы, могу посчитать в уме, но как ту написать не знаю(((
-            // нужна помощь
+            var banana = 5 * 80;
+            var milk = (200 / 100) * 105;
+            var plombir = 2 * 100;
+            var egg = 4 * 70;
+            var breakfast = banana + milk + plombir + egg;
+            var breakfastBreakfast = breakfast / 1000;
+            System.out.println ("Количество грамм завтрака:" + breakfast );
+            System.out.println ("Количество килограм завтрака:" + breakfastBreakfast );
 
             // Задание 7
             // 7 кг переведу в 7000 гр
-            var weight = 7;
-            weight = weight * 1000;
-            var w = 250;
-            var k = 500;
-            weight = weight / w;
-            System.out.println ("За" + weight + "дней похедеет, если будет терять по 250гр");
-            weight = weight * w;
-            weight = weight / k;
-            System.out.println ("За" + weight + "дней похедеет, если будет терять по 500гр");
+            var weight = 7 * 1000;
+            var min = 250;
+            var max = 500;
+            var dayMim = weight / min;
+            var dayMax = weight / max;
+            var average = (min + max) / 2;
+            var dayAverage = weight / average;
+            System.out.println ("При похудении по 250 гр потребуеться" + dayMim + "дней.");
+            System.out.println ("При похудении по 500 гр потребуеться" + dayMax + "дней.");
+            System.out.println ("При похудении в среднем потребуеться" + dayAverage + "дней.");
 
             //Задание 8
             // Mari - Маша
@@ -120,25 +101,26 @@ public class Main {
             var mari = 67760;
             var denis = 83690;
             var kris = 76230;
-            mari = mari * 12;
-            denis = denis * 12;
-            kris = kris * 12;
-            System.out.println ("Годова зарплата без повышения, Маша:" + mari + ",Денис:" + denis  + ",Кристина:" + kris);
-            mari = mari / 12;
-            denis = denis / 12;
-            kris = kris / 12;
-            mari = mari / 100 * 10 + 67760;
-            denis = denis / 100 * 10 + 83690;
-            kris = kris / 100 * 10 + 76230;
-            System.out.println ("Зп за месяц с увеличением на 10%, Маша:" + mari + ",Денис:" + denis  + ",Кристина:" + kris);
-            mari = mari * 12;
-            denis = denis * 12;
-            kris = kris * 12;
-            System.out.println ("Годовая зарплата с повышением на 10%, Маша:" + mari + ",Денис:" + denis  + ",Кристина:" + kris);
-            // честно, так же не поняла как совместить всё вместе, годовой доход новый и старый, чтобы оно всё вместе работало, может я что-то упускаю...
-            // если можно, то хотелось бы получить объяснений, потому что я сломала голову
-            // вообще не уверенна что всё правильно сделала, пожалуйста напишите мне ошибки и каким материалом можно воспользоваться, чтобы изучить вопрос поподробней
-            // заранее спасибо)
+            var percent = 10;
+            var yearMari = mari * 12;
+            var yearDenis = denis * 12;
+            var yearKris = kris * 12;
+            var ageMari = mari / 100 * 10;
+            var monthMari = mari + ageMari;
+            var ageDenis = denis / 100 * 10;
+            var monthDenis = denis + ageDenis;
+            var ageKris = kris / 100 * 10;
+            var monthKris = ageKris + kris;
+            var yearMariMari = monthMari * 12;
+            var yearDenisDenis = monthDenis * 12;
+            var yearKrisKris = monthKris * 12;
+            var differenceMari = yearMariMari - yearMari;
+            var differenceDenis = yearDenisDenis - yearDenis;
+            var differenceKris = yearKrisKris - yearKris;
+            System.out.println ("Маша теперь получает" + monthMari + "рублей. Годовой доход вырос на" + ageMari);
+            System.out.println ("Денис теперь получает" + monthDenis + "рублей. Годовой доход вырос на" + ageDenis);
+            System.out.println ("Кристина теперь получает" + monthKris + "рублей. Годовой доход вырос на" + ageKris);
+            System.out.println ("Разница между годовым доходом сейчас и после повышения: Мари" + differenceMari + "Денис" + differenceDenis + "Кристина" + differenceKris);
         }
     }
 }
